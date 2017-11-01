@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -24,7 +24,7 @@ while True:
 
     for link in links:
         if hasattr(link, "text"):
-            if link.text not in known_links and (link.is_displayed() == True):
+            if link.text not in known_links and (link.is_displayed() is True):
                 tab_opened = True
                 actions = ActionChains(driver)
                 actions.move_to_element(link)
@@ -33,7 +33,7 @@ while True:
                 actions.perform()
 
         if tab_opened:
-            print "Opened tab. Sleeping 10 seconds"
+            print("Opened tab. Sleeping 10 seconds")
             time.sleep(10)
 
     time.sleep(.1)
